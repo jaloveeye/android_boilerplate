@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/fragmentA"
+    >
+    <fragment
+        android:id="@+id/fragmentA"
+        android:name="com.herace.android_boilerplate.ui.a.AFragment"
+        android:label="Fragment A"
+        tools:layout="@layout/fragment_a">
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragmentB"
+        android:name="com.herace.android_boilerplate.ui.b.BFragment"
+        android:label="Fragment B"
+        tools:layout="@layout/fragment_b">
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragmentC"
+        android:name="com.herace.android_boilerplate.ui.c.CFragment"
+        android:label="Fragment C"
+        tools:layout="@layout/fragment_c">
+    </fragment>
+
+</navigation>
