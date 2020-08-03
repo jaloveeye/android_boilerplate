@@ -11,6 +11,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
+import splitties.toast.toast
 import timber.log.Timber
 import java.lang.Exception
 
@@ -82,4 +83,14 @@ abstract class BaseFragment<T: ViewDataBinding, V: BaseViewModel<*>> : Fragment(
         fun onFragmentAttached()
         fun onFragmentDetached(tag: String)
     }
+
+    fun showToast(msg: String?) {
+
+        if (!msg.isNullOrEmpty()) {
+            println(msg)
+            toast(msg)
+        }
+    }
+
+    fun getBinding() = mViewDataBinding
 }

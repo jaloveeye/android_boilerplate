@@ -5,12 +5,14 @@ import androidx.databinding.ObservableArrayList
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.herace.android_boilerplate.data.local.fragmentA.FragmentAEntity
+import com.herace.android_boilerplate.data.local.viewPagerA.ViewPagerAEntity
 import com.herace.android_boilerplate.data.repository.fragmentA.FragmentARepository
 import com.herace.android_boilerplate.ui.base.BaseViewModel
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.schedulers.Schedulers
 import timber.log.Timber
+import java.util.ArrayList
 import kotlin.system.measureTimeMillis
 
 class FragmentAViewModel(application: Application, private val repository: FragmentARepository) : BaseViewModel<Any>(application) {
@@ -81,5 +83,23 @@ class FragmentAViewModel(application: Application, private val repository: Fragm
     fun updateData(categoryList: List<FragmentAEntity>) {
         observableList.clear()
         observableList.addAll(categoryList)
+    }
+
+
+
+    private val list = MutableLiveData<java.util.ArrayList<ViewPagerAEntity>>()
+    fun getList() = list
+    fun loadList() {
+        val localData = mutableListOf<ViewPagerAEntity>()
+        for (x in 0 until 100) {
+            val viewPagerAEntity = ViewPagerAEntity(x, "텍스트 ${x + 1}")
+            localData.add(viewPagerAEntity)
+        }
+
+        list.postValue(localData as ArrayList<ViewPagerAEntity>?)
+    }
+
+    fun loadListNextPage() {
+
     }
 }

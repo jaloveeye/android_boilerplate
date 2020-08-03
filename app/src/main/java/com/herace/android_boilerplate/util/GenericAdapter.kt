@@ -7,8 +7,8 @@ import android.widget.LinearLayout
 import androidx.annotation.LayoutRes
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
-import androidx.databinding.library.baseAdapters.BR
 import androidx.recyclerview.widget.RecyclerView
+import androidx.databinding.library.baseAdapters.BR
 import com.herace.android_boilerplate.ui.base.Commons
 
 
@@ -66,7 +66,7 @@ class GenericAdapter<T : ListItemViewModel>(@LayoutRes val layoutId: Int ) :
         fun bind(itemViewModel: T) {
 
             binding.setVariable(BR.data , itemViewModel)
-//            binding.setVariable(BR.common , commons)
+            binding.setVariable(BR.common , commons)
             binding.executePendingBindings()
         }
     }
