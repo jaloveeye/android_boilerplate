@@ -6,11 +6,12 @@ import com.herace.android_boilerplate.data.repository.temp.TempDataSource
 import io.reactivex.Flowable
 import java.text.SimpleDateFormat
 import java.util.*
+import android.content.Context
 
 class TempRemoteDataSource(): TempDataSource {
 
-    override fun setAccessToken(accessToken: String) {
-        ApiService.setAccessToken(accessToken)
+    override fun setAccessToken(accessToken: String, context: Context) {
+        ApiService.setAccessToken(accessToken, context)
     }
 
     override fun getDatas(id: Int): Flowable<TempEntity> {

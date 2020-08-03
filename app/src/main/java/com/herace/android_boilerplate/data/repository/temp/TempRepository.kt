@@ -5,6 +5,7 @@ import com.herace.android_boilerplate.data.local.temp.TempLocalDataSource
 import com.herace.android_boilerplate.data.remote.temp.TempRemoteDataSource
 import io.reactivex.Flowable
 import timber.log.Timber
+import android.content.Context
 
 class TempRepository(
     private val localDataSource: TempLocalDataSource,
@@ -16,8 +17,8 @@ class TempRepository(
 
 
 
-    override fun setAccessToken(accessToken: String) {
-        remoteDataSource.setAccessToken(accessToken)
+    override fun setAccessToken(accessToken: String, context: Context) {
+        remoteDataSource.setAccessToken(accessToken, context)
     }
 
     override fun getDatas(id: Int): Flowable<TempEntity> {

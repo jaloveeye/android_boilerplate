@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="tab_string">
+        <item>Name A</item>
+        <item>Name B</item>
+        <item>Name C</item>
+        <item>Name D</item>
+        <item>Name E</item>
+    </string-array>
+</resources>

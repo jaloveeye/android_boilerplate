@@ -16,4 +16,12 @@
         <item name="android:textColor">@color/colorVersion</item>
     </style>
 
+
+    <!-- Tab Layout -->
+    <style name="TabLayoutTextAppearance" >
+        <item name="android:textColor">@color/colorWelcomeKakaoText</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:lineHeight">22sp</item>>
+        <item name="android:fontFamily">@font/notosanscjkkrbold</item>
+    </style>
 </resources>

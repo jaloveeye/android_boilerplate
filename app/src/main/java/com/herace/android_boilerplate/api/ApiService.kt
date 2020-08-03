@@ -1,5 +1,6 @@
 package com.herace.android_boilerplate.api
 
+import android.content.Context
 import com.herace.android_boilerplate.data.remote.fragmentA.FragmentAResponse
 import com.herace.android_boilerplate.data.remote.temp.TempData
 import com.herace.android_boilerplate.data.remote.temp.TempResponse
@@ -35,8 +36,8 @@ class ApiService {
     companion object {
         private lateinit var retrofitApi: ApiServiceImpl
 
-        fun setAccessToken(token: String) {
-            retrofitApi = RetrofitCreatorApi.create(ApiServiceImpl::class.java, token)
+        fun setAccessToken(token: String, context: Context) {
+            retrofitApi = RetrofitCreatorApi.create(ApiServiceImpl::class.java, token, context)
         }
 
         fun requestDatas() : Flowable<TempResponse> {

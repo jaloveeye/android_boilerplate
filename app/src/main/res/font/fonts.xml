@@ -3,4 +3,7 @@
     <font
         android:font="@font/notosanscjkkrmedium"
     />
+    <font
+        android:font="@font/notosanscjkkrbold"
+        />
 </font-family>

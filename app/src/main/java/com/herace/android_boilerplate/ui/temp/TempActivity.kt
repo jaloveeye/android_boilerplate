@@ -15,6 +15,8 @@ class TempActivity : BaseActivity<ActivityTempBinding, TempViewModel>(), TempNav
 
     private val mViewModel: TempViewModel by viewModel()
 
+    private val mContext = this
+
     override fun getLayoutId(): Int {
         return R.layout.activity_temp
     }
@@ -34,7 +36,7 @@ class TempActivity : BaseActivity<ActivityTempBinding, TempViewModel>(), TempNav
 
         val id: Int = 0
 
-        mViewModel.setAccessToken("access_token")
+        mViewModel.setAccessToken("access_token", mContext)
         mViewModel.getDatas(id)
 
         mViewModel.data.observe(this, Observer {

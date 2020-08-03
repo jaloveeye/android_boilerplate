@@ -18,4 +18,9 @@
     <color name="colorBottomMenuTextColor">#847770</color>
 
     <color name="colorVersion">#b3aba6</color>
+
+
+    <color name="colorWelcomeButtonText">#85d6ac</color>
+    <color name="colorWelcomeKakaoText">#282828</color>
+    <color name="colorBorder">#eeeeee</color>
 </resources>

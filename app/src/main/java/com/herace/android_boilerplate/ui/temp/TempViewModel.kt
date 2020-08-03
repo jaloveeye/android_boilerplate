@@ -10,6 +10,7 @@ import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.schedulers.Schedulers
 import timber.log.Timber
+import android.content.Context
 
 class TempViewModel(application: Application, private val repository: TempRepository): BaseViewModel<TempNavigator>(application) {
 
@@ -21,8 +22,8 @@ class TempViewModel(application: Application, private val repository: TempReposi
     val data : LiveData<TempEntity>
         get() = _data
 
-    fun setAccessToken(accessToken: String) {
-        repository.setAccessToken(accessToken)
+    fun setAccessToken(accessToken: String, context: Context) {
+        repository.setAccessToken(accessToken, context)
     }
 
     private val compositeDisposable = CompositeDisposable()

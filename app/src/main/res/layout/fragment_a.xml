@@ -10,33 +10,55 @@
             name="viewModel"
             type="com.herace.android_boilerplate.ui.a.FragmentAViewModel" />
     </data>
-    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
-        android:id="@+id/swipe"
+    <LinearLayout
+        android:orientation="vertical"
         android:layout_width="match_parent"
+        android:background="@color/colorWhite"
         android:layout_height="match_parent"
-        android:overScrollMode="never"
-        app:_isRefreshing="@{viewModel.isRefreshing}"
-        app:_onRefreshListener="@{() -> viewModel.refreshData()}"
         >
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tab_home"
+            android:layout_width="match_parent"
+            android:layout_height="53dp"
+            android:paddingStart="10dp"
+            app:tabMode="scrollable"
+            app:tabIndicatorFullWidth="false"
+            app:tabIndicatorColor="@color/colorWelcomeButtonText"
+            android:background="@drawable/border_bottom"
+            app:tabTextColor="@color/colorWelcomeKakaoText"
+            app:tabSelectedTextColor="@color/colorWelcomeButtonText"
+            app:tabTextAppearance="@style/TabLayoutTextAppearance"
+            />
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/viewpager2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/v_tablayout_bottom_border"
+            />
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:overScrollMode="never"
             >
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/fragmentARecycler"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:overScrollMode="never"
-                android:layout_marginStart="1dp"
-                android:layout_marginTop="0dp"
-                android:clipToPadding="false"
-                app:fragmentAAdapter="@{viewModel.observableList}"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-            />
+
+
+<!--            <androidx.recyclerview.widget.RecyclerView-->
+<!--                android:id="@+id/fragmentARecycler"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:overScrollMode="never"-->
+<!--                android:layout_marginStart="1dp"-->
+<!--                android:layout_marginTop="0dp"-->
+<!--                android:clipToPadding="false"-->
+<!--                app:fragmentAAdapter="@{viewModel.observableList}"-->
+<!--                app:layout_constraintBottom_toBottomOf="parent"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintTop_toTopOf="parent"-->
+<!--            />-->
         </androidx.constraintlayout.widget.ConstraintLayout>
-    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+    </LinearLayout>
 </layout>
